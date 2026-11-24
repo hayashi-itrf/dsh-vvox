@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "VOICEVOX read aloud",
+    "description": "Read DSH replies aloud as they are written using local VOICEVOX. Speech synthesis supports Japanese only. Choose a character and voice style, adjust speed and volume, and preview the voice in DSH. Runs on macOS without FFmpeg.",
+    "detail": "docs/DETAIL.en.md"
+  }
+}

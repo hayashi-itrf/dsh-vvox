@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "VOICEVOX読み上げ",
+    "description": "DSHの応答を生成途中からローカルのVOICEVOXで読み上げます。読み上げは日本語のみ対応です。キャラクター・声質・速度・音量の調整と試聴ができます。macOS対応、FFmpeg不要。",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "dsh-vvox",
+  "version": "1.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Japanese-only read-aloud for DeepSeek Harness replies with local VOICEVOX on macOS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayashi-itrf/dsh-vvox.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "scripts",
+    "test",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "client.js",
+    "docs",
+    "client-ui.js"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check index.js && node --check lib/speech.js && node --check lib/text.js && node --check lib/live-text.js && node --check lib/live-speech.js && node --check lib/player.js && node --check lib/settings.js && node --check client.js && node --check lib/web-audio.js && node --check lib/browser-player.js",
+    "smoke": "node scripts/smoke.mjs",
+    "build": "node scripts/build-client.mjs",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.3 <0.3.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  }
+}
